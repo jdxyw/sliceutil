@@ -62,12 +62,12 @@ func TestRemoveIndexInt32(t *testing.T) {
 			got, err := RemoveIndexInt32(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveIndexInt32() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveIndexInt32() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -96,12 +96,12 @@ func TestRemoveIndexInt64(t *testing.T) {
 			got, err := RemoveIndexInt64(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveIndexInt64() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveIndexInt64() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -130,12 +130,12 @@ func TestRemoveIndexFloat32(t *testing.T) {
 			got, err := RemoveIndexFloat32(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveIndexFloat32() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveIndexFloat32() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -164,12 +164,12 @@ func TestRemoveIndexFloat64(t *testing.T) {
 			got, err := RemoveIndexFloat64(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveIndexFloat64() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveIndexFloat64() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -198,12 +198,12 @@ func TestRemoveIndexByte(t *testing.T) {
 			got, err := RemoveIndexByte(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveIndexByte() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveIndexByte() got = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -232,12 +232,12 @@ func TestRemoveIndexBool(t *testing.T) {
 			got, err := RemoveIndexBool(tt.args.s, tt.args.i)
 			if err != nil {
 				if err != tt.wantErr {
-					t.Errorf("RemoveIndexInt() error = %v, wantErr %v", err, tt.wantErr)
+					t.Errorf("RemoveRemoveIndexBoolIndexInt() error = %v, wantErr %v", err, tt.wantErr)
 					return
 				}
 			}
 			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("RemoveIndexInt() got = %v, want %v", got, tt.want)
+				t.Errorf("RemoveRemoveIndexBoolIndexInt() got = %v, want %v", got, tt.want)
 			}
 		})
 	}

@@ -48,7 +48,7 @@ func TestContainsInt32(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ContainsInt32(tt.args.s, tt.args.a); got != tt.want {
-				t.Errorf("ContainsInt() = %v, want %v", got, tt.want)
+				t.Errorf("ContainsInt32() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -74,7 +74,7 @@ func TestContainsInt64(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ContainsInt64(tt.args.s, tt.args.a); got != tt.want {
-				t.Errorf("ContainsInt() = %v, want %v", got, tt.want)
+				t.Errorf("ContainsInt64() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -98,7 +98,7 @@ func TestContainsBool(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ContainsBool(tt.args.s, tt.args.a); got != tt.want {
-				t.Errorf("ContainsInt() = %v, want %v", got, tt.want)
+				t.Errorf("ContainsBool() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -150,7 +150,7 @@ func TestContainsByte(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := ContainsByte(tt.args.s, tt.args.a); got != tt.want {
-				t.Errorf("ContainsInt() = %v, want %v", got, tt.want)
+				t.Errorf("ContainsByte() = %v, want %v", got, tt.want)
 			}
 		})
 	}
