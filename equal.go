@@ -132,3 +132,23 @@ func EqualBytes(a, b []byte) (bool, error) {
 
 	return false, nil
 }
+
+type comparator func(a, b interface{}) bool
+
+// EqualSlice can compare two slices of any type and use customized comparator.
+func EqualSlice(a, b interface{}, fn comparator) (bool, error) {
+	if err := verify(a, b); err != nil {
+		return false, err
+	}
+
+	ai := reflect.ValueOf(a)
+	bi := reflect.ValueOf(b)
+
+	for i := 0; i < ai.Len(); i++ {
+		if fn(ai.Index(i).Interface(), bi.Index(i).Interface()) != true {
+			return false, nil
+		}
+	}
+
+	return true, nil
+}

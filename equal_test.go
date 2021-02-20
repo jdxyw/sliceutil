@@ -236,3 +236,49 @@ func TestEqualBytes(t *testing.T) {
 		})
 	}
 }
+
+type testarg struct {
+	a int
+	b int
+}
+
+func testargCmp(a, b interface{}) bool {
+	if a.(testarg).a == b.(testarg).a {
+		return true
+	}
+
+	return false
+}
+
+func TestEqualSlice(t *testing.T) {
+
+	type args struct {
+		a  []testarg
+		b  []testarg
+		fn comparator
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    bool
+		wantErr error
+	}{
+		{name: "testcase1", args: args{a: []testarg{}, b: []testarg{}, fn: testargCmp}, want: false, wantErr: ErrSliceLengthZero},
+		{name: "testcase2", args: args{a: []testarg{{a: 1, b: 2}, {a: 2, b: 4}}, b: []testarg{{a: 1, b: 3}, {a: 2, b: 5}}, fn: testargCmp}, want: true, wantErr: nil},
+		{name: "testcase3", args: args{a: []testarg{{a: 1, b: 2}, {a: 2, b: 4}}, b: []testarg{{a: 3, b: 2}, {a: 2, b: 4}}, fn: testargCmp}, want: false, wantErr: nil},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := EqualSlice(tt.args.a, tt.args.b, tt.args.fn)
+			if err != nil {
+				if err != tt.wantErr {
+					t.Errorf("EqualSlice() error = %v, wantErr %v", err, tt.wantErr)
+					return
+				}
+			}
+			if got != tt.want {
+				t.Errorf("EqualSlice() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
