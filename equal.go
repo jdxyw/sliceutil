@@ -36,7 +36,7 @@ func EqualBool(a, b []bool) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if a[i] != b[i] {
 			return false, nil
 		}
@@ -51,7 +51,7 @@ func EqualInt(a, b []int) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if a[i] != b[i] {
 			return false, nil
 		}
@@ -66,7 +66,7 @@ func EqualInt32(a, b []int32) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if a[i] != b[i] {
 			return false, nil
 		}
@@ -81,7 +81,7 @@ func EqualInt64(a, b []int64) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if a[i] != b[i] {
 			return false, nil
 		}
@@ -96,7 +96,7 @@ func EqualFloat32(a, b []float32) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if math.Abs(float64(a[i])-float64(b[i])) > float64Epsilon {
 			return false, nil
 		}
@@ -111,7 +111,7 @@ func EqualFloat64(a, b []float64) (bool, error) {
 		return false, err
 	}
 
-	for i, _ := range a {
+	for i := range a {
 		if math.Abs(a[i]-b[i]) > float64Epsilon {
 			return false, nil
 		}
