@@ -181,3 +181,153 @@ func TestFindFistString(t *testing.T) {
 		})
 	}
 }
+
+func TestFindLastInt(t *testing.T) {
+	type args struct {
+		s []int
+		a int
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  int
+		want1 bool
+	}{
+		{name: "testcase1", args: args{s: []int{}, a: 1}, want: -1, want1: false},
+		{name: "testcase2", args: args{s: nil, a: 1}, want: -1, want1: false},
+		{name: "testcase3", args: args{s: []int{1, 2, 3, 4, 5}, a: 1}, want: 0, want1: true},
+		{name: "testcase4", args: args{s: []int{1, 2, 3, 4, 5}, a: 5}, want: 4, want1: true},
+		{name: "testcase5", args: args{s: []int{1, 2, 2, 3, 4, 2, 2, 4, 5}, a: 2}, want: 6, want1: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := FindLastInt(tt.args.s, tt.args.a)
+			if got != tt.want {
+				t.Errorf("FindLastInt() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("FindLastInt() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
+
+func TestFindLastInt32(t *testing.T) {
+	type args struct {
+		s []int32
+		a int32
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  int
+		want1 bool
+	}{
+		{name: "testcase1", args: args{s: []int32{}, a: 1}, want: -1, want1: false},
+		{name: "testcase2", args: args{s: nil, a: 1}, want: -1, want1: false},
+		{name: "testcase3", args: args{s: []int32{1, 2, 3, 4, 5}, a: 1}, want: 0, want1: true},
+		{name: "testcase4", args: args{s: []int32{1, 2, 3, 4, 5}, a: 5}, want: 4, want1: true},
+		{name: "testcase5", args: args{s: []int32{1, 2, 2, 3, 4, 2, 2, 4, 5}, a: 2}, want: 6, want1: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := FindLastInt32(tt.args.s, tt.args.a)
+			if got != tt.want {
+				t.Errorf("FindLastInt32() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("FindLastInt32() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
+
+func TestFindLastInt64(t *testing.T) {
+	type args struct {
+		s []int64
+		a int64
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  int
+		want1 bool
+	}{
+		{name: "testcase1", args: args{s: []int64{}, a: 1}, want: -1, want1: false},
+		{name: "testcase2", args: args{s: nil, a: 1}, want: -1, want1: false},
+		{name: "testcase3", args: args{s: []int64{1, 2, 3, 4, 5}, a: 1}, want: 0, want1: true},
+		{name: "testcase4", args: args{s: []int64{1, 2, 3, 4, 5}, a: 5}, want: 4, want1: true},
+		{name: "testcase5", args: args{s: []int64{1, 2, 2, 3, 4, 2, 2, 4, 5}, a: 2}, want: 6, want1: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := FindLastInt64(tt.args.s, tt.args.a)
+			if got != tt.want {
+				t.Errorf("FindLastInt64() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("FindLastInt64() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
+
+func TestFindLastByte(t *testing.T) {
+	type args struct {
+		s []byte
+		a byte
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  int
+		want1 bool
+	}{
+		{name: "testcase1", args: args{s: []byte{}, a: 1}, want: -1, want1: false},
+		{name: "testcase2", args: args{s: nil, a: 1}, want: -1, want1: false},
+		{name: "testcase3", args: args{s: []byte{1, 2, 3, 4, 5}, a: 1}, want: 0, want1: true},
+		{name: "testcase4", args: args{s: []byte{1, 2, 3, 4, 5}, a: 5}, want: 4, want1: true},
+		{name: "testcase5", args: args{s: []byte{1, 2, 2, 3, 4, 2, 2, 4, 5}, a: 2}, want: 6, want1: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := FindLastByte(tt.args.s, tt.args.a)
+			if got != tt.want {
+				t.Errorf("FindLastInt64() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("FindLastInt64() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
+
+func TestFindLastString(t *testing.T) {
+	type args struct {
+		s []string
+		a string
+	}
+	tests := []struct {
+		name  string
+		args  args
+		want  int
+		want1 bool
+	}{
+		{name: "testcase1", args: args{s: []string{}, a: "1"}, want: -1, want1: false},
+		{name: "testcase2", args: args{s: nil, a: "1"}, want: -1, want1: false},
+		{name: "testcase3", args: args{s: []string{"1", "2", "3", "4", "5"}, a: "1"}, want: 0, want1: true},
+		{name: "testcase4", args: args{s: []string{"1", "2", "3", "4", "5"}, a: "5"}, want: 4, want1: true},
+		{name: "testcase5", args: args{s: []string{"1", "2", "2", "3", "4", "2", "2", "4", "5"}, a: "2"}, want: 6, want1: true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, got1 := FindLastString(tt.args.s, tt.args.a)
+			if got != tt.want {
+				t.Errorf("FindLastString() got = %v, want %v", got, tt.want)
+			}
+			if got1 != tt.want1 {
+				t.Errorf("FindLastString() got1 = %v, want %v", got1, tt.want1)
+			}
+		})
+	}
+}
